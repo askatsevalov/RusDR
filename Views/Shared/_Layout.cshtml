@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RusDR</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/uikit.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="uk-container uk-background-cover uk-background-fixed uk-panel uk-flex uk-flex-center uk-flex-middle uk-container-expand uk-height-viewport" style="background-image: url(/files/images/bg.jpg);">
+        <main role="main" class="pb-3 pt-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/uikit.min.js"></script>
+    <script src="~/js/uikit-icons.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿@model RusDR.Models.Congratulation
+
+    <div>
+        <div class="uk-modal-body">
+            <h2 class="uk-modal-title">@Model.Person</h2>
+            <hr />
+            <video src="@Model.Video" loop playsinline uk-video="autoplay: inview"></video>
+            <p>
+                @Model.Text
+            </p>
+            <img src="@Model.Meme" />
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+        </div>
+    </div>
