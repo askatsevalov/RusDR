@@ -1,28 +1,37 @@
 ﻿@model Dictionary<string, Congratulation> 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная";
 }
 
-    <div class="uk-column-1-1@s uk-column-1-2@m uk-column-1-3@l uk-width-medium uk-width-xlarge@m uk-width-2xlarge@l">
-        @foreach (Congratulation con in Model.Values.Take(6))
-        {
-            <div class="uk-margin-large-bottom uk-animation-toggle" style="z-index: @(10-@con.Id); ">
-                <ul class="uk-thumbnav">
-                    <li>
-                        <a uk-toggle="target: #modDialog" asp-action="Congratulation" asp-route-id="@con.Id" class="congrItem">
-                            <img src="@con.Photo" style="border: 3px solid white; border-radius: 40px;" class="uk-height-medium@l uk-height-large@m uk-width-medium uk-animation-kenburns uk-animation-fast uk-transform-origin-top-center">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        }
-        <div class="uk-column-span uk-animation-toggle">
-            <ul class="uk-thumbnav"><li><a uk-toggle="target: #modDialog" asp-action="Congratulation" asp-route-id="@Model["all"].Id" class="congrItem"><img src="@Model["all"].Photo" style="border: 3px solid white; border-radius: 40px;" class="uk-width-expand uk-animation-kenburns uk-animation-fast uk-transform-origin-bottom-center"></a></li></ul>
+<div class="uk-column-1-1 uk-column-1-2@s uk-column-1-3@l uk-width-medium uk-width-xlarge@s uk-width-2xlarge@l">
+    @foreach (Congratulation con in Model.Values.Take(6))
+    {
+        <div class="uk-margin-large-bottom uk-animation-toggle">
+            <ul class="uk-thumbnav">
+                <li>
+                    <a uk-toggle="target: #modDialog" asp-action="Congratulation" asp-route-id="@con.Id" class="congrItem">
+                        <img src="@con.Photo" style="border: 3px solid white; border-radius: 40px;" class="uk-height-medium@l uk-height-large@m uk-width-medium uk-animation-kenburns uk-animation-fast uk-transform-origin-top-center">
+                    </a>
+                </li>
+            </ul>
         </div>
+    }
+    <div class="uk-column-span uk-transition-toggle">
+        <ul class="uk-thumbnav">
+            <li>
+                <a uk-toggle="target: #modDialog" asp-action="Congratulation" asp-route-id="@Model["all"].Id" class="congrItem">
+                    <img src="@Model["all"].Photo" style="border: 3px solid white; border-radius: 40px;" class="uk-width-expand">
+                    @if (@Model["all"].Photo2 != null){
+                    <img src="@Model["all"].Photo2" style="border: 3px solid white; border-radius: 40px;" class="uk-width-expand uk-transition-fade uk-position-cover">
+                    }
+                </a>
+            </li>
+        </ul>
     </div>
+</div>
 
-<div id="modDialog" uk-modal>
-    <div id="dialogContent" class="uk-modal-dialog uk-margin-auto-vertical"></div>
+<div id="modDialog" class="" uk-modal>
+    <div id="dialogContent" class="uk-modal-dialog uk-margin-auto-vertical uk-width-1-2"></div>
 </div>
 
 @section scripts

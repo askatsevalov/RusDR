@@ -1,14 +1,30 @@
 ﻿@model RusDR.Models.Congratulation
 
     <div>
-        <div class="uk-modal-body uk-text-center">
+        <div class="uk-modal-header uk-text-center">
             <h2 class="uk-modal-title">@Model.Person</h2>
-            <hr />
+        </div>
+        <div class="uk-modal-body uk-text-center" uk-overflow-auto>
+            @if (@Model.Video != null){
             <video src="@Model.Video" loop playsinline uk-video="autoplay: inview"></video>
-            <p>
-                @Model.Text
-            </p>
+            <hr class="uk-divider-icon">
+            }
+            <div class="uk-placeholder uk-text-left">
+                @foreach (string p in @Model.Text.Split("\r\n"))
+                {
+                @p<br>
+                }
+            </div>
+            <hr class="uk-divider-icon">
+            @if (@Model.Meme != null){
+            <h3>А еще мем:</h3>
             <img src="@Model.Meme" />
+            }
+            @if (@Model.PhotoSet != null){
+            foreach (string p in @Model.PhotoSet){
+            <img class="uk-margin-small" src="@p" />
+            }
+            }
             <button class="uk-modal-close-default" type="button" uk-close></button>
         </div>
     </div>

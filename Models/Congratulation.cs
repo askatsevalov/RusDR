@@ -8,10 +8,12 @@ namespace RusDR.Models
     public class Congratulation
     {
         public int Id { get; set; }
-        public string Person { get; set; }
-        public string Video { get; set; }
-        public string Meme { get; set; }
-        public string Text { get; set; }
-        public string Photo { get; set; }
+        public string Person { get; set; } = null;
+        public string Video { get; set; } = null;
+        public string Meme { get; set; } = null;
+        public string Text { get; set; } = null;
+        public string Photo { get; set; } = null;
+        public string Photo2 { get; set; } = null;
+        public List<string> PhotoSet { get; set; } = null;
     }
 }

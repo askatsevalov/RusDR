@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RusDR</title>
+    <title>Руслану 21 годик!</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/uikit.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="uk-background-cover uk-background-fixed" style="background-image: url(/files/images/bg.png);">
 
-    <div class="uk-container uk-background-cover uk-background-fixed uk-panel uk-flex uk-flex-center uk-flex-middle uk-container-expand uk-height-viewport" style="background-image: url(/files/images/bg.jpg);">
+    <div class="uk-container uk-panel uk-flex uk-flex-center uk-flex-middle uk-container-expand uk-height-viewport">
         <main role="main" class="pb-3 pt-5">
             @RenderBody()
         </main>
     </div>
+
+    <footer class="uk-modal-footer" style="opacity: 0.4;">
+        <div class="uk-text-right uk-text-bold">Сделано 8 пацанами</div>
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
